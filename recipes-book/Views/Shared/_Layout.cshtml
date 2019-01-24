@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="pull-left">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/Images/logo.png" alt="logo" />
+                    </a>
+                </div>
+                <div id="login">
+                    @if (Session["UserId"] != null)
+                    {
+                        <a href="@Url.Action("LogOut", "Account")">Выход</a>
+                    }
+                </div>
+                <div id="login">
+                    @if (Session["UserId"] == null)
+                    {
+                        <a href="@Url.Action("Auth", "Account")">Войти</a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Auth", "Account")">@Session["UserName"]</a>
+                    }
+                </div>
+                <button class="btn btn-default" type="button" onclick="location.href='@(Session["UserId"] == null ? Url.Action("Auth", "Account"): Url.Action("AddRecipeForm", "Recipes"))'">
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <span>Добавить рецепт</span>
+                </button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FirstDishes" ? "active" : "")">@Html.ActionLink("Первые блюда", "FirstDishes", "Recipes")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "SecondDishes" ? "active" : "")">@Html.ActionLink("Вторые блюда", "SecondDishes", "Recipes")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Salads" ? "active" : "")">@Html.ActionLink("Салаты", "Salads", "Recipes")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BakeryProducts" ? "active" : "")">@Html.ActionLink("Выпечка", "BakeryProducts", "Recipes")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Desserts" ? "active" : "")">@Html.ActionLink("Десерты", "Desserts", "Recipes")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Snacks" ? "active" : "")">@Html.ActionLink("Закуски", "Snacks", "Recipes")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Drinks" ? "active" : "")">@Html.ActionLink("Напитки", "Drinks", "Recipes")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Other" ? "active" : "")">@Html.ActionLink("Разное", "Other", "Recipes")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

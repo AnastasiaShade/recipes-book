@@ -1,0 +1,243 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #fcf3f3;
+}
+
+h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+
+@media (max-width: 990px) {
+    span,
+    p,
+    h2 {
+        padding-left: 10px;
+    }
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+    .body-content {
+        padding-top: 40px;
+    }
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.container {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 758px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 980px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1190px;
+    }
+}
+
+.nav > li > a {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li {
+        float: none !important;
+        display: table-cell;
+    }
+
+    .navbar-nav {
+        display: table;
+        width: 100%;
+    }
+}
+
+.navbar-brand {
+    float: right;
+    padding: 25px 30px;
+}
+
+.navbar-inverse {
+    background-color: #f5c6c6;
+    border-color: #f75f5f;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #080808;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: #ff0000;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-text {
+    color: #080808;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #080808;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #ff0000;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #ff0000;
+    background-color: transparent;
+}
+
+#login {
+    text-decoration: underline;
+}
+
+#login > a {
+    text-decoration: underline;
+}
+
+.btn {
+    border: 1px solid;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.focus,
+.btn:hover > span,
+.btn:focus > span,
+#login:hover > a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+#login,
+.btn {
+    float: right;
+    padding: 9px 10px;
+    margin: 8px 15px 8px 0;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+#login > a,
+.btn > span {
+    color: #080808;
+}
+
+.page-header {
+    text-align: center;
+}
+
+.recipe-container {
+    background-color: #fff;
+    margin-bottom: 30px;
+    border: 1px solid #808080;
+}
+
+.thumbnail {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 15px; 
+}
+
+.recipe-container > .row > .top-right > .btn {
+    margin: 0 -2px 0 0;
+}
+
+.recipe-info {
+    background-color: #d3d2d2;
+    margin: 0;
+    padding-top: 5px;
+    height: 50px;
+}
+
+@media (min-width: 768px) {
+    .recipe-info {
+        padding-top: 15px;
+    }
+}
+
+.sign-in-btn ,
+.sign-up-btn {
+    float: left;
+}
+
+.link {
+    padding-left: 205px;
+}
+
+.full-recipe {
+    margin: 50px;
+}
+
+.full-recipe > .row > .recipe-info {
+    border: 1px solid #000;
+    height: 200px;
+}
+
+@media (min-width: 900px) {
+    .full-recipe > .row > .recipe-info {
+        margin: 20px 25px;
+    }
+}
+
+.ingredients {
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.badge {
+    font-size: 14px;
+    font-weight: normal;
+    color: #000;
+    background-color: #fff;
+    border-radius: 0;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.step-info {
+    padding-left: 20px;
+}

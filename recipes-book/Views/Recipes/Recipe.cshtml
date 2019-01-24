@@ -1,0 +1,33 @@
+﻿@model recipes_book.Models.Recipe
+
+@{
+    ViewBag.Title = "Салат \"Фейерверк\""; //надо будет взять из модели название рецепта
+}
+
+<div class="recipe-container full-recipe">
+    <div class="row">
+        <img src="~/Images/salad.jpg" alt="salad" class="col-xs-12 col-md-4 thumbnail">
+        <div class="top-right col-xs-12 col-md-8">
+            <span class="category">Категория: @Html.DisplayNameFor(model => model.Category)</span>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            <div>
+                <h2><a href="@Url.Action("Recipe", "Recipes")">@Html.DisplayFor(model => model.Title)</a></h2>
+                <p>@Html.DisplayFor(model => model.Description)</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <p class="ingredients">Ингредиенты:</p>
+            <p>@Html.DisplayFor(model => model.Ingredients, new { htmlAttributes = new { @class = "ingredients" } })</p>
+        </div>
+        <div class="col-md-3 recipe-info">
+            <p class="header">Время приготовления:</p><p>@Html.DisplayFor(model => model.CookingTime) минут</p>
+            <p class="header">Порций:</p><p>@Html.DisplayFor(model => model.Parts)</p>
+            <p class="header">Сложность:</p><p>@Html.DisplayNameFor(model => model.Difficulty)</p>
+        </div>
+    </div>
+    <p class="ingredients">Рецепт:</p>
+    <div>@Html.DisplayFor(model => model.RecipeDescription, new { htmlAttributes = new { @class = "ingredients" } })</div>
+</div>

@@ -1,0 +1,17 @@
+﻿@model recipes_book.Models.Recipe
+
+<div class="recipe-container ">
+    <div class="row">
+        <img src="~/Images/salad.jpg" alt="salad" class="col-xs-12 col-md-4 thumbnail">
+        <div class="top-right col-xs-12 col-md-8">
+            <span class="category">Категория: @Html.DisplayNameFor(model => model.Category)</span>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            <div>
+                <h2><a href="@Url.Action("Recipe", "Recipes", Model)">@Html.DisplayFor(model => model.Title)</a></h2>
+                <p>@Html.DisplayFor(model => model.Description)</p>
+                <p>@Html.DisplayFor(model => model.Ingredients)</p>
+            </div>
+        </div>
+    </div>
+</div>

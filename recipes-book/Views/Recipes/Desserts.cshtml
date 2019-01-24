@@ -1,0 +1,17 @@
+﻿@model List<recipes_book.Models.Recipe>
+@{
+    ViewBag.Title = "Десерты";
+}
+
+<h1 class="page-header">@ViewBag.Title</h1>
+@if (Model.Count != 0)
+{
+    foreach (var item in Model)
+    {
+        @Html.Partial("RecipePreview", item)
+    }
+}
+else
+{
+    <p>Нет рецептов в данной категории</p>
+}
